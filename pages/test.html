@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 	<meta name='apple-itunes-app' content='app-id=app-id=477927812'> -->
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+        /*font-size: 14px;*/
+        }
+    </style>
+</head>
+<body>
+<div>test</div>
+<a href="javascript:void(0)" id="downloadApp">点击下载和彩云app</a>
+<div name="waiting">请等待下载...</div>
+<script type="text/javascript">
+		document.getElementById("downloadApp").onclick = function(){
+			// alert("clicked");
+			downApp()
+		};
+
+
+		function downApp(){
+
+			//判断设备是安卓还是苹果系统
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1,
+			isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+			//不同设备转跳不同链接
+			urls = {
+				'android':'http://caiyun.feixin.10086.cn/download_mcloud.jsp?p=android',
+				'ios':'https://itunes.apple.com/cn/app/likeso/id1074943747?mt=8&ign-mpt=uo%3D4',
+				'other':'http://www.baidu.com'
+			};
+			//三元运算
+			// window.location.href = isAndroid? urls.android : isiOS? urls.ios : urls.other;
+			//简化
+			if(isAndroid){
+				window.location.href=urls.android;
+			}else if(isiOS){
+				window.location.href=urls.ios;
+			}else{
+				// window.location.href=urls.other;
+				alert("非许可设备");
+			}
+
+		}
+
+	</script>
+
+</body>
+
+</html>
