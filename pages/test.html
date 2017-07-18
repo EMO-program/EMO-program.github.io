@@ -22,17 +22,18 @@
 
 <script>
 	document.getElementById("odApp").onclick = function(){
-		//alert("odApp点击事件");
-		var ifr = document.createElement('iframe');
-		ifr.src = 'mcloud://';
-		ifr.style.display = 'none';
+		location.href = 'mcloud://';
+		var t = Date.now();
 
-		document.body.appendChild(ifr);
 		setTimeout(function(){
-			document.body.removeChild(ifr);
-		}, 3000);
-		//alert("odApp点击事件2");
+			if (Date.now() - t < 1200) {
+				location.href = 'itms-apps://itunes.apple.com/app/id544673497';
+			}
+		}, 1000);
+
+		return false;
 	};
+
 </script>
 
 
