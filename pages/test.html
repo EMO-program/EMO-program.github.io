@@ -22,7 +22,7 @@
 
 <script>
 	document.getElementById("odApp").onclick = function(){
-		alert("odApp点击事件");
+		//alert("odApp点击事件");
 		var ifr = document.createElement('iframe');
 		ifr.src = 'mcloud://';
 		ifr.style.display = 'none';
@@ -31,6 +31,7 @@
 		setTimeout(function(){
 			document.body.removeChild(ifr);
 		}, 3000);
+		alert("odApp点击事件2");
 	};
 </script>
 
