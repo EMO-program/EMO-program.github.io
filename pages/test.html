@@ -23,13 +23,13 @@
 <script>
 	document.getElementById("odApp").onclick = function(){
 		window.location.href = 'mcloud://';
-		var t = Date.now();
+		//var t = Date.now();
 
 		setTimeout(function(){
-			if (Date.now() - t < 3000) {
+			//if (Date.now() - t < 3000) {}
 				location.href = 'itms-apps://itunes.apple.com/app/id544673497';
-			}
-		}, 1000);
+
+		}, 3000);
 
 		return false;
 	};
