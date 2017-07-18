@@ -36,7 +36,7 @@
 			//不同设备转跳不同链接
 					Ourls = {
 						'android':'http://caiyun.feixin.10086.cn/download_mcloud.jsp?p=android',
-						'ios':'sms://',
+						'ios':'itms-apps://itunes.apple.com/app/id544673497',
 						'other':'http://www.baidu.com'
 					};
 			//三元运算
@@ -44,12 +44,15 @@
 			//简化
 			if(isAndroid){
 				window.location.href=Ourls.android;
-			}else if(isiOS){
+			}
+
+			else if(isiOS){
 				window.location.href=Ourls.ios;
 			}else{
 				// window.location.href=urls.other;
 				alert("非许可设备");
 			}
+
 		}
 
 		function downApp(){
@@ -61,7 +64,7 @@
 			//不同设备转跳不同链接
 			urls = {
 				'android':'http://caiyun.feixin.10086.cn/download_mcloud.jsp?p=android',
-				'ios':'https://itunes.apple.com/cn/app/likeso/id1074943747?mt=8&ign-mpt=uo%3D4',
+				'ios':'itunes.apple.com/app/id544673497',
 				'other':'http://www.baidu.com'
 			};
 			//三元运算
