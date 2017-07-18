@@ -21,7 +21,7 @@
 <a href="javascript:void(0)" id="odApp">打开或下载和彩云</a>
 
 <script>
-	$("#odApp").click(function() {
+	document.getElementById("odApp").onclick = function(){
 		alert("odApp点击事件");
 		var ifr = document.createElement('iframe');
 		ifr.src = 'mcloud://';
@@ -32,7 +32,7 @@
 			document.body.removeChild(ifr);
 			window.location.href="itms-apps://itunes.apple.com/app/id544673497";
 		}, 3000);
-	});
+	};
 </script>
 
 
