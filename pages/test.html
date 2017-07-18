@@ -20,20 +20,7 @@
 <br>
 <a href="javascript:void(0)" id="odApp">打开或下载 和彩云</a>
 
-<script>
-	document.getElementById("odApp").onclick = function(){
-		window.location.href = 'mcloud://';
-		//var t = Date.now();
 
-		setTimeout(function(){
-			//if (Date.now() - t < 3000) {}
-				window.location.href = 'itms-apps://itunes.apple.com/app/id544673497';
-		}, 3000);
-
-		return false;
-	};
-
-</script>
 
 
 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -73,19 +60,19 @@
 			}
 
 		}
-
+		//不同设备转跳不同链接
+		urls = {
+			'android':'http://caiyun.feixin.10086.cn/download_mcloud.jsp?p=android',
+			'ios':'itms-apps://itunes.apple.com/app/id544673497',
+			'other':'http://www.baidu.com'
+		};
 		function downApp(){
 
 			//判断设备是安卓还是苹果系统
 			var u = navigator.userAgent;
 			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1,
 			isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
-			//不同设备转跳不同链接
-			urls = {
-				'android':'http://caiyun.feixin.10086.cn/download_mcloud.jsp?p=android',
-				'ios':'itms-apps://itunes.apple.com/app/id544673497',
-				'other':'http://www.baidu.com'
-			};
+
 			//三元运算
 			// window.location.href = isAndroid? urls.android : isiOS? urls.ios : urls.other;
 			//简化
@@ -100,7 +87,20 @@
 
 		}
 
-	</script>
+
+		document.getElementById("odApp").onclick = function(){
+			window.location.href = 'mcloud://';
+			//var t = Date.now();
+
+			setTimeout(function(){
+				//if (Date.now() - t < 3000) {}
+				window.location.href = urls.ios;
+			}, 3000);
+
+			return false;
+		};
+
+</script>
 
 </body>
 
