@@ -31,7 +31,6 @@
     <p class="link" id = "tryOpenApp">尝试打开和彩云app</p>
 </div>
 <div class = "remark">如果已安装和彩云则打开，未安装则打开下载页</div>
-<div>4</div>
 
 <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -49,7 +48,10 @@
             //如果是在微信内部点击的时候
             if(ua.toLocaleLowerCase().indexOf("micromessenger") != -1 ){
                 _openAppUrl = function(){
-                    alert("请点击右上角用浏览器查看！");
+                    if(isiOS)
+                    alert("请点击右上角用safari浏览器查看！");
+                    else if(isAndroid)
+                        alert("请点击右上角用外部浏览器查看！");
                 }
             }else{
                 //在浏览器打开，判断是在移动端还是在PC端
