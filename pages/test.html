@@ -6,19 +6,25 @@
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
     <title>和彩云上行流量领取</title>
     <style type="text/css">
-        *{
-        /*font-size: 14px;*/
-
-        }
+        .btn{
+			color: #fff;
+			background: #dd7800;
+			padding:5px;
+			margin:5px;
+			display: block;
+			text-decoration: none;
+		}
     </style>
 </head>
 <body>
-<div>test</div>
-<a href="javascript:void(0)" id="downloadApp">点击下载和彩云</a>
 <br>
-<a href="javascript:void(0)" id="openApp">打开和彩云</a>
 <br>
-<a href="itms-apps://itunes.apple.com/app/id544673497" id="odApp">打开或下载 和彩云</a>
+<br>
+<a href="javascript:void(0)" id="downloadApp" class="btn">点击下载和彩云</a>
+<br>
+<a href="javascript:void(0)" id="openApp"  class="btn" >打开和彩云</a>
+<br>
+<a href="itms-apps://itunes.apple.com/app/id544673497" id="odApp" class="btn" >打开或下载[和彩云]</a>
 
 <script>
 document.getElementById("odApp").onclick = function(){
@@ -30,10 +36,10 @@ setTimeout(function(){
 window.location.href = 'itms-apps://itunes.apple.com/app/id544673497';
 //window.location.href = 'itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=544673497';
 
-}, 250);
-	setTimeout(function() {
-		location.reload();
-	}, 300);
+}, 2000);
+//	setTimeout(function() {
+//		location.reload();
+//	}, 300);
 
 return false;
 };
